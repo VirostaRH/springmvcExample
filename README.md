@@ -1,1 +1,1 @@
-# springmvcExample
+# springmvcSimple
