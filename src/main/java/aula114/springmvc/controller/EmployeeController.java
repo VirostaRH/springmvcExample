@@ -9,26 +9,51 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import aula114.springmvc.service.EmployeeService;
 import aula114.springmvc.domain.Contact;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 import java.util.ArrayList;
 
+
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Set;
+
+import org.springframework.data.redis.core.ListOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+import aula114.springmvc.domain.Contact;
 @Controller
-public class EmployeeController {
+public class EmployeeController{
 
+	@Autowired
+	private EmployeeService employeeService;
 
-  @RequestMapping("/show/{clave}")
-  public ... {
-    //  
-  }
-  
-  @RequestMapping("/show")
-  public ... {
-    //  
-  }
-  
-  @RequestMapping("/employee")
-  public ... {
-    //  
-  }
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	@RequestMapping("/show/{clave}")
+	public void showKey() {
+	}
+
+	@RequestMapping("/show/")
+	public String show(Model model, @RequestParam("clave") String id){
+		//se creará un objeto contact que será retornado por show tras la petición desde la request como parámetro "clave";
+		/*System.out.println("MOSTRANDO ID - "+id);*/
+		Contact aContact = employeeService.show(id);
+		model.addAttribute("contact", aContact);
+		return "show";
+	}
+
+	@RequestMapping("/employee")
+	public String mostrarListado (Model model){
+		//se llama una variable lista que va a ser generada por el employeeService
+		List <String> list = employeeService.listIdEmployee();
+		model.addAttribute("list", list);
+		return "showList";
+	}
 }

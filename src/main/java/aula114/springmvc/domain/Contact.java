@@ -46,11 +46,11 @@ public class Contact implements Serializable{
 		this.address = address;
 	}
 
-	public String getPhone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setPhone(String telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 

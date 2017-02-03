@@ -1,7 +1,6 @@
 package aula114.springmvc.service;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import java.util.List;
@@ -19,19 +18,34 @@ import aula114.springmvc.domain.Contact;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+	@Autowired
+	private RedisTemplate redisTemplate;
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	private List<String> idList = new ArrayList<String>();
+	
 	@Override
 	public List<String> listIdEmployee() {
-          
-          //  Se obtiene desde Redis
-         
-          return ...
+		
+		String KEY = "Contact"; 
+	    Set<Object> list = redisTemplate.opsForHash().keys(KEY);
+	    List<String> idList1 = new ArrayList(list);
+		idList = idList1;
+		return idList;
 	}
 
 	@Override
 	public Contact show(String id) {
-
-          //  Se obtiene desde MySQL
-
-          return ...
+	    //como retornaremos un contacto, hay que crearlo:
+		Contact contacto = new Contact();
+		/*consultar a mysql:
+		*1: Crear consulta:*/
+		String sql = "select name, email, address, telephone from contact where contact_id = ?";
+		//cargamos el resultado de esa consulta en un objeto, que será creado y mapeado con el beanProp...
+		contacto = 	jdbcTemplate.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper<Contact>(Contact.class));
+		System.out.println("OBJETO CONTACT" + contacto);
+	    return contacto;
 	}
 }
