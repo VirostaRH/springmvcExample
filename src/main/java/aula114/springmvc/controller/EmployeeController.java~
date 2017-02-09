@@ -24,7 +24,7 @@ import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.sql.SQLException;
+
 
 import aula114.springmvc.domain.Contact;
 @Controller
@@ -52,30 +52,8 @@ public class EmployeeController{
 	@RequestMapping("/employee")
 	public String mostrarListado (Model model){
 		//se llama una variable lista que va a ser generada por el employeeService
-		try{
-			List <Contact> list = employeeService.listIdEmployee();
-			model.addAttribute("list", list);
-		}
-		catch(SQLException e)
-		{
-			System.out.println("Cagada en el sql.");
-		}
+		List <Contact> list = employeeService.listIdEmployee();
+		model.addAttribute("list", list);
 		return "showList";
 	}
-
-	@RequestMapping("/edit/{clave}")
-	public String editar (Model model, @RequestParam("clave") String id){
-		//se llama una variable lista que va a ser generada por el employeeService
-		employeeService.edit(id);
-		return "redirect:/showList";
-	}
-	
-
-	@RequestMapping("/delete/{clave}")
-	public String delete (Model model, @RequestParam("clave") String id){
-		//se llama una variable lista que va a ser generada por el employeeService
-		employeeService.delete(id);
-		return "redirect:/showList";
-	}
-	
 }

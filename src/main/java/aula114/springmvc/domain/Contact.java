@@ -9,18 +9,29 @@ import java.io.Serializable;
 
 public class Contact implements Serializable{
         private static final long serialVersionUID = 1L;
+	private String id;
 	private String name;
 	private String email;
 	private String address;
 	private String telephone;
 
         public Contact() { }
-        public Contact(String n, String e, String a, String p) {
+        public Contact(String i, String n, String e, String a, String p) {
+          //adding new propertie = id.
+          id = i;
           name=n;
           email=e;
           address=a;
           telephone=p;
         }
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id=id;
+	}
 
 	public String getName() {
 		return name;
