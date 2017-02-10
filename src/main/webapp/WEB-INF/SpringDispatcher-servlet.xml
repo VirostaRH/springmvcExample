@@ -27,6 +27,10 @@
      <value>.jsp</value>
    </property>
   </bean>
+
+  <mvc:resources mapping="/resources/**" location="/resources/" />
+  <mvc:annotation-driven/>
+
   <bean id="jedisConnFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
         p:host-name="localhost" p:port="6379" />
 

@@ -42,8 +42,7 @@ public class EmployeeController{
 
 	@RequestMapping("/show/")
 	public String show(Model model, @RequestParam("clave") String id){
-		//se creará un objeto contact que será retornado por show tras la petición desde la request como parámetro "clave";
-		/*System.out.println("MOSTRANDO ID - "+id);*/
+		
 		Contact aContact = employeeService.show(id);
 		model.addAttribute("contact", aContact);
 		return "show";
