@@ -18,7 +18,7 @@ public class Contact implements Serializable{
         public Contact() { }
         public Contact(String i, String n, String e, String a, String p) {
           //adding new propertie = id.
-          id = i;
+          id=i;
           name=n;
           email=e;
           address=a;
@@ -66,6 +66,6 @@ public class Contact implements Serializable{
 	}
 
 	public String toString() {
-		return String.format("[%s - %s - %s - %s]", name, email, address, telephone);
+		return String.format("[%s - %s - %s - %s - %s]", id, name, email, address, telephone);
 	}
 }

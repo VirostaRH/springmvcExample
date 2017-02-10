@@ -45,12 +45,22 @@ public final class show_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("<body>\n");
       out.write("\t<h1>Contactos almacenados.</h1>\n");
-      out.write("\t<p>Nombre: ");
+      out.write("\t<p>Name: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contact.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</p>\n");
-      out.write("\t<p>");
+      out.write("\t<p>Mail: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contact.email}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</p>\n");
+      out.write("\t<p>Address: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contact.address}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</p>\n");
+      out.write("\t<p>Phone: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contact.telephone}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</p>\n");
+      out.write("\n");
+      out.write("\t<form method=\"POST\" id=\"formu1\" action=\"/employee\">\n");
+      out.write("\t\t<input type=\"submit\" id=\"send\" value=\"Aceptar\">\n");
+      out.write("\t</form>\n");
       out.write("</body>\n");
       out.write("</html> ");
     } catch (Throwable t) {

@@ -65,9 +65,7 @@ public final class showList_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<form method=\"POST\" id=\"formu1\" action=\"/show/\">\n");
       out.write("\t\t<table>\n");
       out.write("\t\t\t<tr>\n");
-      out.write("\t\t\t\t<td style=\"border: solid 1px\">");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${c.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</td>\n");
+      out.write("\t\t\t\t<td style=\"border: solid 1px\">ID</td>\n");
       out.write("\t\t\t\t<td style=\"border: solid 1px\">Nombre</td>\n");
       out.write("\t\t\t\t<td style=\"border: solid 1px\">DirecciÃ³n</td>\n");
       out.write("\t\t\t\t<td style=\"border: solid 1px\">Email</td>\n");
@@ -87,6 +85,7 @@ public final class showList_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<input type=\"submit\" id=\"consult\" value=\"Consultar\">\n");
       out.write("\t\t<input type=\"submit\" id=\"update\" value=\"Modificar\">\n");
       out.write("\t\t<input type=\"submit\" id=\"delete\" value=\"Borrar\">\n");
+      out.write("\t\t<input type=\"submit\" id=\"add\" value=\"Crear\">\n");
       out.write("\t</form>\n");
       out.write("</body>\n");
       out.write("</html> ");

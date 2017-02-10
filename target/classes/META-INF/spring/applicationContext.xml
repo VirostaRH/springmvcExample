@@ -18,8 +18,8 @@
         <!-- Configurer that replaces ${...} placeholders with values from a properties file -->
 
          <!-- redis template definition -->
-       <bean id="redisTemplate" 
+       <!--bean id="redisTemplate" 
              class="org.springframework.data.redis.core.RedisTemplate" 
-             p:connection-factory-ref="jedisConnFactory"/>
+             p:connection-factory-ref="jedisConnFactory"/-->
 </beans>
 

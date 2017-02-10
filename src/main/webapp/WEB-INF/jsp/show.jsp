@@ -2,7 +2,13 @@
 <html>
 <body>
 	<h1>Contactos almacenados.</h1>
-	<p>Nombre: ${contact.name}</p>
-	<p>${contact.email}</p>
+	<p>Name: ${contact.name}</p>
+	<p>Mail: ${contact.email}</p>
+	<p>Address: ${contact.address}</p>
+	<p>Phone: ${contact.telephone}</p>
+
+	<form method="POST" id="formu1" action="/employee">
+		<input type="submit" id="send" value="Aceptar">
+	</form>
 </body>
 </html> 

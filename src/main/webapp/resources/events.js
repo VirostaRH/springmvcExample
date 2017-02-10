@@ -17,4 +17,9 @@ function cargarEv()
 		$("#formu1").attr("action", "/delete/");
 		$("#formu1").submit();
 	});
+	$("#add").click(function(e){
+		e.preventDefault();
+		$("#formu1").attr("action", "/add/");
+		$("#formu1").submit();
+	});
 }

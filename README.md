@@ -15,10 +15,6 @@ Spring webapp that allow consult from redis user id's and
 
 V1:
 
-- In construct - Code not complete.
-
-Goals:
-
-- Create a complete functionally CRUD with Spring.
-- Right now, i want create in one view the access to read, consult, delete and update from the same view. However, the controller force us to send differents actions. This behaviour is setted with js, adding action to buttons (see file webapp/WEB-INF/jsp/showList.jsp).
+- Modify view, we have now CRUD app using Spring & Mysql.
+- From same view employee, we have access to edit, consult a row, remove row and add new, using forms, we have too access to previous view. That is controlled with js -that edits form method- and the controller in server side.
 

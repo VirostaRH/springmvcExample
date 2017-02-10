@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/resources/events.js"></script>
 
 </head>
@@ -11,7 +12,7 @@
 	<form method="POST" id="formu1" action="/show/">
 		<table>
 			<tr>
-				<td style="border: solid 1px">${c.id}</td>
+				<td style="border: solid 1px">ID</td>
 				<td style="border: solid 1px">Nombre</td>
 				<td style="border: solid 1px">Dirección</td>
 				<td style="border: solid 1px">Email</td>

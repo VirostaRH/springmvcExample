@@ -12,7 +12,7 @@
 	<form method="POST" id="formu1" action="/show/">
 		<table>
 			<tr>
-				<td style="border: solid 1px">${c.id}</td>
+				<td style="border: solid 1px">ID</td>
 				<td style="border: solid 1px">Nombre</td>
 				<td style="border: solid 1px">Dirección</td>
 				<td style="border: solid 1px">Email</td>
@@ -36,6 +36,7 @@
 		<input type="submit" id="consult" value="Consultar">
 		<input type="submit" id="update" value="Modificar">
 		<input type="submit" id="delete" value="Borrar">
+		<input type="submit" id="add" value="Crear">
 	</form>
 </body>
 </html> 

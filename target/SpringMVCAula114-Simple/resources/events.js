@@ -2,9 +2,19 @@ $(document).ready(cargarEv);
 
 function cargarEv()
 {
-	$("#consult").onClick(function(){
+	$("#consult").click(function(e){
+		e.preventDefault();
 		$("#formu1").attr("action", "/show/");
-		$(this).preventDefault;
-		//$("#formu1").submit();
+		$("#formu1").submit();
+	});
+	$("#update").click(function(e){
+		e.preventDefault();
+		$("#formu1").attr("action", "/edit/");
+		$("#formu1").submit();
+	});
+	$("#delete").click(function(e){
+		e.preventDefault();
+		$("#formu1").attr("action", "/delete/");
+		$("#formu1").submit();
 	});
 }
