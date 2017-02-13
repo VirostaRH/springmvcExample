@@ -145,9 +145,12 @@ public class EmployeeController{
 		valoresEntrada.put("address", address);
 		valoresEntrada.put("email", email);
 		valoresEntrada.put("telephone", telephone);
-
+		
+		String valores = (String)valoresEntrada.get("name");
+		System.out.println(valores);
 		int c = employeeService.add(valoresEntrada);
 		model.addAttribute("res", c);
+		model.addAttribute("insertado", valores);
 		return "insertRes";
 	}
 }

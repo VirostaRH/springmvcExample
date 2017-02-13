@@ -7,7 +7,7 @@
 	<h1>Insertar contacto:</h1>
 	<c:choose>
 		<c:when test="${res}==0">Edicion KO</c:when>
-		<c:otherwise>Inserción ok.{res}
+		<c:otherwise>Inserción ok: ${"insertado"}
 		</c:otherwise>
 	</c:choose>
 	<form method="POST" id="formu1" action="/employee">
